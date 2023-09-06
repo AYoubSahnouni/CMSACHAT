@@ -38,15 +38,13 @@ export class LoginpageComponent {
         sessionStorage.setItem('idmanager',this.userlogin.manager?.id);
         this.router.navigate(['manager']);
       }
-      else if(sessionStorage.getItem("userrole")=="Collaborateur"){
+      else if(sessionStorage.getItem("userrole")=="collaborateur"){
         this.router.navigate(['collaborator']);
       }
       else{
         console.log("not user");
       }
-    },err=>{
-      console.log(err);
-    });
+    },error => alert("Matricule ou Mot de passe Incorrect!!!"));
 
   }
 

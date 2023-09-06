@@ -9,7 +9,8 @@ import { RequestComponent } from './components/request/request.component';
 import { RequestmanagerComponent } from './components/requestmanager/requestmanager.component';
 import { RequestaproverComponent } from './components/requestaprover/requestaprover.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { AddrequestComponent } from './components/addrequest/addrequest.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -17,11 +18,14 @@ import { NgxPaginationModule } from 'ngx-pagination';
     UserinfoComponent,
     HeaderComponent,
     AllhomepagesComponent,
-    RequestComponent,
+    AddrequestComponent,
     RequestmanagerComponent,
-    RequestaproverComponent
+    RequestaproverComponent,
+    AddrequestComponent,
+    RequestComponent
   ],
   imports: [
+    MatDialogModule,
     RouterModule,
     CommonModule,
     ReactiveFormsModule,
@@ -29,6 +33,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NgxPaginationModule
   ],
   exports: [
+    RequestComponent,
     UserinfoComponent,
     HeaderComponent,
     AllhomepagesComponent,

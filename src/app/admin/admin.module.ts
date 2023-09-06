@@ -8,6 +8,8 @@ import { RoleComponent } from './role/role.component';
 import { GroupeComponent } from './groupe/groupe.component';
 import { UserComponent } from './user/user.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CollaborateurComponent } from './collaborateur/collaborateur.component';
+import { ManagerComponent } from './manager/manager.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AdminpageComponent,
     RoleComponent,
     GroupeComponent,
-    UserComponent
+    UserComponent,
+    CollaborateurComponent,
+    ManagerComponent
   ],
   imports: [
    

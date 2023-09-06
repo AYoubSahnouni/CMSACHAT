@@ -19,7 +19,7 @@
 
 
         </div>
-        <div class="flname" *ngIf="role=='Collaborateur'">
+        <div class="flname" *ngIf="role=='collaborateur'">
             <div><label for="">Nom</label> <input type="text" name="" id="" disabled readonly [value]="user?.collaborator?.nom"></div>
             <div><label for="">Prenom</label> <input type="text" name="" id="" disabled readonly [value]="user?.collaborator?.prenom"></div>
 
@@ -31,10 +31,10 @@
         <div class="role"><label for="">Role</label><input type="role" disabled readonly [value]="user?.role?.namerole"></div>
 
         <div class="useraproval" *ngIf="role=='UserTraitement'">
-            <label for="">Groupe Nmae</label><input type="text" disabled readonly [value]="user?.useraprovel?.groupe?.namegroupe">
+            <label for="">Groupe</label><input type="text" disabled readonly [value]="user?.useraprovel?.groupe?.namegroupe">
         </div>
 
-        <div class="colaborator" *ngIf="role=='Collaborateur'">
+        <div class="colaborator" *ngIf="role=='collaborateur'">
             <label for="">manager</label> <input type="email" disabled readonly [value]="user?.collaborator?.manager?.nom+' '+user?.collaborator?.manager?.prenom">
         </div>
 

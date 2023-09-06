@@ -4,8 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { SharedModule } from './shared/shared.module';
+
 import { NgxPaginationModule } from 'ngx-pagination';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     SharedModule,
     ReactiveFormsModule,
     FormsModule,
-    NgxPaginationModule 
-    
+    NgxPaginationModule,
+    BrowserAnimationsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

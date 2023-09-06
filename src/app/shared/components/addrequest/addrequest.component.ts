@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { UserService } from 'src/app/services/user.service';
-import { AddrequestComponent } from '../addrequest/addrequest.component';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-request',
-  templateUrl: './request.component.html',
-  styleUrls: ['./request.component.scss']
+  selector: 'app-addrequest',
+  templateUrl: './addrequest.component.html',
+  styleUrls: ['./addrequest.component.scss']
 })
-export class RequestComponent implements OnInit{
+export class AddrequestComponent {
 
   requests!:any;
   formrequest!:FormGroup;
@@ -18,7 +17,8 @@ export class RequestComponent implements OnInit{
   roleuser!:any;
   groups!:any;
 
-  constructor(private userservice:UserService,private fb:FormBuilder,private dialog:MatDialog){}
+  constructor(private userservice:UserService,private fb:FormBuilder,private dialogRef: MatDialogRef<AddrequestComponent>,
+    @Inject(MAT_DIALOG_DATA) private data: any){}
 
   ngOnInit(): void {
     this.iduser=sessionStorage.getItem("iduserlogin");
@@ -34,7 +34,6 @@ export class RequestComponent implements OnInit{
         id: '',
       }),
     });
-
     this.getallgroups();
     this.getallrequests();
 
@@ -53,24 +52,15 @@ export class RequestComponent implements OnInit{
   addgroupe(){
     this.userservice.addrequest(this.formrequest.value).subscribe(res=>{
       console.log(res);
-      this.getallrequests();
+      this.formrequest.reset();
+      this.dialogRef.close(this.formrequest.value);
+    }, error => {
+      console.error('Erreur lors de l\'ajout de l\'utilisateur :', error);
     });
   }
-
-  openForm() {
-    const dialogRef = this.dialog.open(AddrequestComponent);
-
-    dialogRef.afterClosed().subscribe({
-      next: (val: any) => {
-        if (val) {
-          this.getallrequests();
-          this.getallgroups();
-        }
-      },
-    });
+  close() {
+    this.dialogRef.close();
   }
-
-
 
 
 }

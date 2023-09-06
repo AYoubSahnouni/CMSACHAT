@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit{
     this.isadmin = sessionStorage.getItem("userrole")=="admin";
     this.isuseraprove = sessionStorage.getItem("userrole")=="UserTraitement";
     this.ismanager = sessionStorage.getItem("userrole")=="manager";
-    this.iscolab =sessionStorage.getItem("userrole")=="Collaborateur";
+    this.iscolab =sessionStorage.getItem("userrole")=="collaborateur";
 
   }
 

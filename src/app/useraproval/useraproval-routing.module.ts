@@ -7,7 +7,7 @@ import { UserinfoComponent } from '../shared/components/userinfo/userinfo.compon
 
 const routes: Routes = [
   {path:'',component:UseraprovalpageComponent,children:[
-    {path:'',component:AllhomepagesComponent},
+    {path:'',component:RequestComponent},
     {path:'request',component:RequestComponent},
     {path:'information',component:UserinfoComponent},
   ]}

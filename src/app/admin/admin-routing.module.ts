@@ -9,7 +9,7 @@ import { UserinfoComponent } from '../shared/components/userinfo/userinfo.compon
 
 const routes: Routes = [
   {path:'',component:AdminpageComponent,children:[
-    {path:'',component:AllhomepagesComponent},
+    {path:'',component:UserComponent},
     {path:'role',component:RoleComponent},
     {path:'groupe',component:GroupeComponent},
     {path:'user',component:UserComponent},
